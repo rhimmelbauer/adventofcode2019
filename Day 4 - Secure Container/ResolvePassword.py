@@ -19,6 +19,7 @@ if __name__ == "__main__":
     for num in increasFilter:
         if(CheckStringDuplicate(num)):
             hasDuplicate.append(num)
+    print("Remeber git")
     print("lastFilter: {}".format(hasDuplicate))
     print("Guesses Length: {}\nnoZeros Length: {},\nincreaseFilter: {}\nhasDuplicates: {}".format(len(holeNumbersAsStrings), len(zeroFilter),len(increasFilter),len(hasDuplicate)))
     pass
