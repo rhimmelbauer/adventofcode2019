@@ -53,7 +53,7 @@ class WirePath():
         for step in self.Movements:
             print(step)
 
-def readInput(filePath):
+def ReadInput(filePath):
     file = open(filePath,'r')
     data = file.read().split(',')
     return data
@@ -62,13 +62,11 @@ def readInput(filePath):
 
 if __name__ == "__main__":
     print("Working on dir: {}".format(os.getcwd()))
-    WireA = WirePath(readInput(WireA))
-    WireB = WirePath(readInput(WireB))
+    WireA = WirePath(ReadInput(WireA))
+    WireB = WirePath(ReadInput(WireB))
     distancesFromOrigin = []
     crossSectionIndexes = []
     crossSectionsWireLength = []
-    o = [27726, 24752, 25018, 34482, 91744, 88346, 12936, 93100, 13588, 93100, 103932, 104964, 62774, 62890, 65384, 65384, 109252, 109612, 108292, 108832, 114712, 113110, 116094, 113784, 113784, 126648, 126990, 72202, 73068, 116004, 117300, 119868, 120014, 120460, 121222, 120346, 152852, 153480, 158918, 79718, 79580, 156474, 78262, 77574, 108936, 166338, 144794, 144794, 113642, 155712, 187280, 108156, 107942, 188878, 184664, 106408, 106408, 184664, 189710, 189710, 186924, 186924, 124964, 124964, 123876, 123876, 127900, 130936]
-    print(min(o))
     for spaceA in WireA.Coordinates:
         try:
             wireBIndex = WireB.Coordinates.index(spaceA)
@@ -85,6 +83,8 @@ if __name__ == "__main__":
     print("Total Lengths from cross section: {}".format(crossSectionsWireLength))
     distancesFromOrigin.pop(0)
     print("Min Cross Section Distance: {}".format(min(distancesFromOrigin)))
+    crossSectionsWireLength.pop(0)
+    print("Min Wire Length: {}".format(min(crossSectionsWireLength)))
     #for space in WireA.Coordinates:
     #WireA.PrintMovements()
     ## Draw WireA Path
